@@ -1,5 +1,8 @@
-import logo from '../../resources/img/logo.png'
+import './header.scss'
 
+
+import logo from '../../resources/img/logo.png'
+import Spinner from '../spinner/Spinner'
 
 const Header = () => {
 
@@ -7,7 +10,7 @@ const Header = () => {
         <header>
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#"><img src={logo} alt="Pokemon logo"/></a>
+                    <a className="navbar-brand" href="#"><img src={logo} alt="Pokemon logo" className="logotype"/></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
@@ -17,12 +20,13 @@ const Header = () => {
                             <a className="nav-link" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Random</a>
+                            <a className="nav-link" href="/fg">Random</a>
                         </li>
                     </ul>
                     </div>
                 </div>
             </nav>
+            <Spinner/>
         </header>
 
     );

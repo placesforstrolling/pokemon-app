@@ -1,9 +1,13 @@
 import Pokemon from "../Pokemons/Pokemon"
+import About from "../about/About";
 
 const Mainpage = () => {
 
     return (
-        <Pokemon/>
+        <>
+            <About/>
+            <Pokemon/>
+        </>
     )
 }
 

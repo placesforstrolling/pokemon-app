@@ -1,3 +1,25 @@
 header {
-    
+    padding-top: 20px;
+    .logotype {
+        width: 180px;
+    }
+    .navbar {
+    border-radius: 60px;
+        .nav-item {
+            margin-right: 10px;
+            margin-left: 10px;
+            .nav-link {
+                -webkit-text-stroke: 1px rgba(13, 102, 218, 1);
+                -webkit-text-fill-color: rgb(253, 234, 57);
+                font-size: 22px;
+                font-weight: 800;
+                transition: .4s;
+                &:hover {
+                    -webkit-text-stroke: 1px rgb(253, 234, 57);
+                    -webkit-text-fill-color: rgba(13, 102, 218, 0.8);
+                }
+            }
+        
+        }
+    }
 }

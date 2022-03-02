@@ -1,0 +1,17 @@
+.about {
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 60px;
+    h1 {
+        color: rgba(255, 0, 0, 0.863);
+        text-align: center;
+        margin-top: 50%;
+        transform: translateY(-50%);
+        font-size: 45px;
+    }
+    img {
+        margin-top: 20px;
+        width: 80%;
+        text-align: right;
+    }
+}

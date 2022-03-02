@@ -1,0 +1,60 @@
+ .ball{
+    width:5em;
+    height:5em;
+    border-radius:2.5em;
+    top:calc(50% - 2.5em);
+    left:calc(50% - 2.5em);
+    position:absolute;
+    overflow:hidden;
+    box-shadow:6px 6px 9px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .ball {
+    -webkit-animation: tran 1s linear 1s 5 alternate;
+    animation: tran 1s linear infinite;
+  }
+  
+  @keyframes tran{
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .up{
+    width:5em;
+    height:2.5em;
+    background-color:red;
+    position:absolute;
+  }
+  .down{
+    width:5em;
+    height:2.5em;
+    background-color:white;
+    position:absolute;
+    top:2.5em;
+  }
+  .rect{
+    position:absolute;
+    background-color:black;
+    top:6.5em;
+    width:20em;
+    height:2em;
+    overflow:hidden;
+  }
+  .middle{
+    position:absolute;
+    background-color:white;
+    width:2em;
+    height:2em;
+    border-radius:50%;
+    border: .5em solid black;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%)
+  }
+  
