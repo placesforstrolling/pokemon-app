@@ -3,6 +3,8 @@ import './buttonGo.scss';
 const ButtonGo = (props) => {
 
     return (
-        <a href="#" className="btn-go"></a>
+        <a href={props.link} className="btn-go">{props.text}</a>
     );
 }
+
+export default ButtonGo;
