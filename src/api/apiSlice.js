@@ -3,14 +3,18 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({baseUrl: 'https://pokeapi.co/api/v2'}),
-    tagTypes: ['Heroes'],
-    endpoints: builder => ({
+    tagTypes: ['Pokemons'],
+    endpoints: (builder) => ({
         getPokemons: builder.query({
-            query: () => '/pokemon?offset=0&limit=12',
+            query: (limit) => `/pokemon?offset=0&limit=${limit}`,
+            providesTags: ['Pokemons']
+        }),
+        getPokemon: builder.query({
+            query: (id) => `/pokemon/${id}`,
             providesTags: ['Pokemons']
         })
 
     })
 });
 
-export const {useGetPokemonsQuery} = apiSlice;
+export const {useGetPokemonsQuery, useGetPokemonQuery} = apiSlice;

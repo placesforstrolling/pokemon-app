@@ -1,9 +1,9 @@
 import './buttonGo.scss';
 
-const ButtonGo = (props) => {
+const ButtonGo = ({action, link, text}) => {
 
     return (
-        <a href={props.link} className="btn-go">{props.text}</a>
+        <a onClick={action} href={link} className="btn-go">{text}</a>
     );
 }
 
