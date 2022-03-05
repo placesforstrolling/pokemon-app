@@ -22,11 +22,6 @@ const PokemonList = () => {
 
     // const [oldPokemons, setOldPokemons] = useState([]);
 
-    if (isLoading) {
-        return <Spinner/>;
-    } else if (isError) {
-        return <h5 className="text-center mt-5">Ошибка загрузки</h5>
-    }
 
     const renderPokemonsList = (arr) => {
         if (arr.length === 0) {
@@ -43,7 +38,15 @@ const PokemonList = () => {
         })
     }
 
-    const elements = !isLoading ? renderPokemonsList([...pokemons, ...data.results]) : null;
+
+    const elements = useMemo(() => {
+        if (data !== undefined) {
+           return renderPokemonsList([...pokemons, ...data.results])
+        } else {
+        return 1;}
+        
+    }, [offset, isLoading])
+
 
     const loadMore = () => {
         setOffset(offset + 12);
@@ -55,6 +58,7 @@ const PokemonList = () => {
            <h2 className="text-center">All our Lovely Pokes <img src={heart} alt="Heart" /></h2>
            <div className="pokes">
                <div className="row justify-content-around">
+                   
                    {elements}
                    {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={isLoading ? true : false}/>}
                </div>
