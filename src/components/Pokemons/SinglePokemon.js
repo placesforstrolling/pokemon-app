@@ -1,6 +1,7 @@
 import './pokemon.scss';
 import pika from '../../resources/img/pikachu.png';
 import { useGetPokemonQuery } from '../../api/apiSlice';
+import Spinner from '../Spinner/Spinner';
 
 const SinglePokemon = ({id, name}) => {
 

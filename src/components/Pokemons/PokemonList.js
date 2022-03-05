@@ -4,15 +4,23 @@ import heart from '../../resources/img/heart.png'
 import SinglePokemon from './SinglePokemon';
 import ButtonGo from '../buttonGo/ButtonGo';
 import Spinner from '../Spinner/Spinner'
-import { useGetPokemonsQuery, useGetPokemonQuery } from '../../api/apiSlice';
+import { useGetPokemonsQuery } from '../../api/apiSlice';
+import { useMemo, useState } from 'react';
 
 const PokemonList = () => {
 
+    const [offset, setOffset] = useState(0);
+    const [pokemons, setPokemons] = useState([]);
+
     const {
-        data: pokemons = [],
+        data,
         isLoading,
         isError,
-    } = useGetPokemonsQuery(12);
+    } = useGetPokemonsQuery(offset);
+
+    // const [more, setMore] = useState(false);
+
+    // const [oldPokemons, setOldPokemons] = useState([]);
 
     if (isLoading) {
         return <Spinner/>;
@@ -30,15 +38,16 @@ const PokemonList = () => {
         return arr.map(({...props}, i) => {
             i++;
             return (
-                <SinglePokemon id={i} {...props} />
+                <SinglePokemon id={i} {...props} key={i}/>
             )
         })
     }
 
-    const elements = !isLoading ? renderPokemonsList(pokemons.results) : null;
+    const elements = !isLoading ? renderPokemonsList([...pokemons, ...data.results]) : null;
 
     const loadMore = () => {
-        console.log(1)
+        setOffset(offset + 12);
+        setPokemons([...pokemons, ...data.results])
     }
 
     return (
@@ -47,7 +56,7 @@ const PokemonList = () => {
            <div className="pokes">
                <div className="row justify-content-around">
                    {elements}
-                   {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore}/>}
+                   {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={isLoading ? true : false}/>}
                </div>
                
            </div>
