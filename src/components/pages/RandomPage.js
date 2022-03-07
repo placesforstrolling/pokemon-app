@@ -1,5 +1,6 @@
 import RandomPokemon from "../RandomPokemon/RandomPokemon";
 
+
 const Mainpage = () => {
 
     return (
