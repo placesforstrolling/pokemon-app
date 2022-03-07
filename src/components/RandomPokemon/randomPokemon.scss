@@ -1,0 +1,17 @@
+$iron: url('../../resources/img/iron.jpg');
+body {
+    background: hsla(0, 0%, 82%, 1);
+
+background: radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+}
+.randomPokemon {
+    background-image: $iron;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    padding: 300px 20px;
+}
