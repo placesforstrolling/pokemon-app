@@ -4,53 +4,35 @@ import heart from '../../resources/img/heart.png'
 import SinglePokemon from './SinglePokemon';
 import ButtonGo from '../buttonGo/ButtonGo';
 import Spinner from '../Spinner/Spinner'
-import { useGetPokemonsQuery } from '../../api/apiSlice';
 import { useMemo, useState } from 'react';
 
 const PokemonList = () => {
 
-    const [offset, setOffset] = useState(0);
+    const [offset, setOffset] = useState(142);
     const [pokemons, setPokemons] = useState([]);
+    const [oldPokemns, setOldPokemons] = useState([]);
+    const [id, setId] = useState(1);
 
-    const {
-        data,
-        isLoading,
-        isError,
-    } = useGetPokemonsQuery(offset);
+    const renderPokemonsList = () => {
+        setId(id + 12);
+        setOldPokemons([...oldPokemns, ...pokemons]);
+        setPokemons([]);
+        for (let i = id; i < id + 12; i++) {
+            console.log(i);
+            setPokemons(pokemons => [...pokemons,<SinglePokemon id={i} key={i}/>] );
 
-    // const [more, setMore] = useState(false);
-
-    // const [oldPokemons, setOldPokemons] = useState([]);
-
-
-    const renderPokemonsList = (arr) => {
-        if (arr.length === 0) {
-            return (
-                <h5 className="text-center mt-5">No Pokemons</h5>
-            )
+            console.log(pokemons);
         }
-
-        return arr.map(({...props}, i) => {
-            i++;
-            return (
-                <SinglePokemon id={i} {...props} key={i}/>
-            )
-        })
+        return [...oldPokemns, ...pokemons];
     }
 
 
     const elements = useMemo(() => {
-        if (data !== undefined) {
-           return renderPokemonsList([...pokemons, ...data.results])
-        } else {
-        return 1;}
-        
-    }, [offset, isLoading])
-
+        return renderPokemonsList()
+    }, [offset])
 
     const loadMore = () => {
         setOffset(offset + 12);
-        setPokemons([...pokemons, ...data.results])
     }
 
     return (
@@ -60,7 +42,7 @@ const PokemonList = () => {
                <div className="row justify-content-around">
                    
                    {elements}
-                   {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={isLoading ? true : false}/>}
+                   {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={false}/>}
                </div>
                
            </div>

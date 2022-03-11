@@ -3,43 +3,51 @@ import './randomPokemon.scss';
 import { useGetPokemonQuery, useGetTotalNumberQuery } from '../../api/apiSlice';
 import { useState } from 'react';
 import ButtonGo from '../buttonGo/ButtonGo';
+import Spinner from '../Spinner/Spinner';
 
 const RandomPokemon = () => {
 
-    const [id, setId] = useState(1);
+    const [id, setId] = useState(rnd(1, 800));
     const [name, setName] = useState('');
     const [height, setHeight] = useState('');
+    const [weight, setWeight] = useState('');
     const [image, setImage] = useState('');
     const {data: pokemon, isLoading, isError} = useGetPokemonQuery(id);
 
   
     const getRandomPokemon = () => {
 
-        setId(Math.floor(Math.random() * (800 - 1) + 1));
+        setId(rnd(1, 800));
         if (!isLoading) {
             setName(pokemon.name);
             setHeight(pokemon.height);
             setImage(pokemon.sprites.front_default);
-            console.log(pokemon)
+            setWeight(pokemon.weight)
         }
-
     }
 
-  
-
+  function rnd (min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+  }
     return (
         <section className="randomPokemon">
-            <div className="row">
-                <div className="col-lg-12">
-                    <h2>Randomizer</h2>
+
+                    <h2>Randomizer 🎲</h2>
                     <div className="random-pokemon"></div>
                     <div className="door"></div>
-                    <h2>Name: {name}</h2>
-                    <h2>Height: {height} </h2>
                     <img src={image} alt="" class="pokeImage"/>
-                    <ButtonGo text={'Random'}  link={'javascript:void(0)'} action={getRandomPokemon} disable={isLoading ? true : false}/>
-                </div>
-            </div>
+                    {isLoading ? <Spinner/> : null}
+                    <div className="info">
+                        <h4>Name: {name}</h4>
+                        <h4>Height: {height} </h4>
+                        <h4>Weight: {weight} </h4>
+                    </div>
+                    
+                    <ButtonGo 
+                            text={'Random'}  
+                            link={'javascript:void(0)'} 
+                            action={getRandomPokemon} 
+                            disable={isLoading ? true : false}/>
         </section>
     )
 }

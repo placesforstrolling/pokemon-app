@@ -1,12 +1,9 @@
 $iron: url('../../resources/img/iron.jpg');
 body {
-    background: hsla(0, 0%, 82%, 1);
-
-background: radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
-
-background: -moz-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
-
-background: -webkit-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+    // background: hsla(0, 0%, 82%, 1);
+    // background: radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+    // background: -moz-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
+    // background: -webkit-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 26%, 1) 100%);
 }
 .randomPokemon {
     background-image: $iron;
@@ -14,7 +11,32 @@ background: -webkit-radial-gradient(circle, hsla(0, 0%, 82%, 1) 0%, hsla(0, 0%, 
     background-repeat: no-repeat;
     border-radius: 30px;
     padding: 300px 20px;
+    position: relative;
+    h2 {
+        color: orange;
+        position: absolute;
+        top: 20px;
+        text-align: center;
+    }
     .pokeImage {
-        width: 300px;
+        width: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: drop-shadow(5px 5px 5px #fff);
+    }
+    .info {
+        position: absolute;
+        bottom: 20px;
+        color: #fff;
+        text-transform: capitalize;
+    }
+    .btn-go {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
