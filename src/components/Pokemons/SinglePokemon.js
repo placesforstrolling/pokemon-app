@@ -2,6 +2,7 @@ import './pokemon.scss';
 import pika from '../../resources/img/pikachu.png';
 import { useGetPokemonQuery } from '../../api/apiSlice';
 import Spinner from '../Spinner/Spinner';
+import { Link } from 'react-router-dom';
 
 const SinglePokemon = ({id}) => {
 
@@ -28,6 +29,7 @@ const SinglePokemon = ({id}) => {
 
     return (
         <div className="col-lg-2">
+            <Link to={`/poke/${id}`} >
             <div className="pokemon-item">
                 <svg viewBox="0 0 300 436" className="cell" style={color}>
                     <defs>
@@ -48,6 +50,7 @@ const SinglePokemon = ({id}) => {
                 {isLoading ? <Spinner/> : null}
                 <h4 className="name">{name}</h4>
             </div>
+            </Link>
         </div>
             
     );

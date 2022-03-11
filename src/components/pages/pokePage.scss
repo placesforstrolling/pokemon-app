@@ -1,0 +1,38 @@
+.pokemonSingle {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 30px 20px;
+    text-align: center;
+    h2 {
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    img {
+        width: 200px;
+        &:hover {
+            &.front {
+                opacity: 0;
+            }
+        }
+        &:hover {
+            &.back {
+                opacity: 1;
+            }
+        }
+        
+        &.front {
+            z-index: 1;
+        }
+        &.back {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            &:hover {
+                &.front {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

@@ -4,10 +4,12 @@ import { useGetPokemonQuery, useGetTotalNumberQuery } from '../../api/apiSlice';
 import { useState } from 'react';
 import ButtonGo from '../buttonGo/ButtonGo';
 import Spinner from '../Spinner/Spinner';
+import { Link } from 'react-router-dom';
 
 const RandomPokemon = () => {
 
     const [id, setId] = useState(rnd(1, 800));
+    const [oldId, setOldId] = useState(id)
     const [name, setName] = useState('');
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
@@ -16,7 +18,7 @@ const RandomPokemon = () => {
 
   
     const getRandomPokemon = () => {
-
+        setOldId(id);
         setId(rnd(1, 800));
         if (!isLoading) {
             setName(pokemon.name);
@@ -41,6 +43,7 @@ const RandomPokemon = () => {
                         <h4>Name: {name}</h4>
                         <h4>Height: {height} </h4>
                         <h4>Weight: {weight} </h4>
+                        <Link to={`/poke/${oldId}`} >More</Link>
                     </div>
                     
                     <ButtonGo 
