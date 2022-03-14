@@ -23,10 +23,12 @@ const SinglePokemon = ({id}) => {
     let color = {
         filter: `drop-shadow(3px 5px 2px rgb(${rndRgb(25, 255)}, ${rndRgb(25, 255)}, ${rndRgb(25, 255)}))`
     };
+    // let animation = {
+    //     animation: `poke ${rndRgb(0.6, 0.8)}s infinite alternate`
+    // }
     let animation = {
-        animation: `poke ${rndRgb(0.6, 0.8)}s infinite alternate`
+        animation: ''
     }
-
     return (
         <div className="col-lg-2">
             <Link to={`/poke/${id}`} >

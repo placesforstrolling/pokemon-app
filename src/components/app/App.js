@@ -19,6 +19,7 @@ function App() {
               
               <Route path="/" element={<Mainpage />} />
               <Route path="/random" element={<Random />} />
+              <Route path="/search" element={''} />
               {/* <Route path="about" element={<About />} /> */}
               <Route path="/poke/:id" element={<PokePage/>}/>
               <Route path="*" element={<Page404 />} />

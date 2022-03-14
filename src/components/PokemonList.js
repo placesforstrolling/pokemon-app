@@ -4,7 +4,7 @@ import heart from '../../resources/img/heart.png'
 import SinglePokemon from './SinglePokemon';
 import ButtonGo from '../buttonGo/ButtonGo';
 import Spinner from '../Spinner/Spinner'
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 
 const PokemonList = () => {
 
@@ -26,9 +26,6 @@ const PokemonList = () => {
         return [...oldPokemns, ...pokemons];
     }
 
-    useEffect(() => {
-        setOffset(0)
-    }, [])
 
     const elements = useMemo(() => {
         return renderPokemonsList()

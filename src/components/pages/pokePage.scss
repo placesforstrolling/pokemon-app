@@ -9,30 +9,16 @@
     }
     img {
         width: 200px;
+    }
+    .front {
+    }
+    .back {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
         &:hover {
-            &.front {
-                opacity: 0;
-            }
-        }
-        &:hover {
-            &.back {
-                opacity: 1;
-            }
-        }
-        
-        &.front {
-            z-index: 1;
-        }
-        &.back {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            &:hover {
-                &.front {
-                    opacity: 0;
-                }
-            }
+            opacity: 1;
         }
     }
 }

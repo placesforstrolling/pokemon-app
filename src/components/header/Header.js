@@ -22,6 +22,9 @@ const Header = () => {
                             <Link className="nav-link" to="/random">Random</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link" to="/search">Search</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/whataf">Defunct </Link>
                         </li>
                     </ul>

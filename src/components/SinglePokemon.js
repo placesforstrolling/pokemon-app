@@ -2,6 +2,7 @@ import './pokemon.scss';
 import pika from '../../resources/img/pikachu.png';
 import { useGetPokemonQuery } from '../../api/apiSlice';
 import Spinner from '../Spinner/Spinner';
+import { Link } from 'react-router-dom';
 
 const SinglePokemon = ({id}) => {
 
@@ -13,6 +14,8 @@ const SinglePokemon = ({id}) => {
     if (!isLoading) {
         image = pokemon.sprites.front_default;
         name = pokemon.name;
+    } else {
+        image = false;
     }
    
 
@@ -26,6 +29,7 @@ const SinglePokemon = ({id}) => {
 
     return (
         <div className="col-lg-2">
+            <Link to={`/poke/${id}`} >
             <div className="pokemon-item">
                 <svg viewBox="0 0 300 436" className="cell" style={color}>
                     <defs>
@@ -43,8 +47,10 @@ const SinglePokemon = ({id}) => {
                     <svg viewBox="0 0 204.54 207.46" className="pokeball"><path d="M9.57,128.66l60.57,0s.42,1.17,1.49,3.35c10.51,22.12,34.09,31.79,56.93,22.92,12.07-4.69,20.49-13.53,24.76-26.27h60.6c-3.66,40.18-40.45,85.21-95.06,88.75C60.8,221.14,15.86,177.72,9.57,128.66Z" transform="translate(-9.57 -10.14)"></path> <path d="M214.11,99.09H153.33a15.33,15.33,0,0,0-1.28-3.46c-8-16.74-21.42-25.84-39.89-25.95C93.44,69.56,80,78.77,71.65,95.58c-.77,1.53-1.51,3.51-1.51,3.51H9.79c5.15-45.56,47-89.37,102.94-88.95S209.31,54.53,214.11,99.09Z" transform="translate(-9.57 -10.14)"></path> <path d="M111.72,134.54a20.39,20.39,0,1,1,20.53-19.9A20.5,20.5,0,0,1,111.72,134.54Z" transform="translate(-9.57 -10.14)"></path></svg>
                 </svg>
                 <img src={image} alt="Pokemon" className="pokeImg" style={animation}/>
+                {isLoading ? <Spinner/> : null}
                 <h4 className="name">{name}</h4>
             </div>
+            </Link>
         </div>
             
     );
