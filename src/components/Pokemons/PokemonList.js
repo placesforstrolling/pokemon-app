@@ -18,10 +18,7 @@ const PokemonList = () => {
         setOldPokemons([...oldPokemns, ...pokemons]);
         setPokemons([]);
         for (let i = id; i < id + 12; i++) {
-            console.log(i);
             setPokemons(pokemons => [...pokemons,<SinglePokemon id={i} key={i}/>] );
-
-            console.log(pokemons);
         }
         return [...oldPokemns, ...pokemons];
     }

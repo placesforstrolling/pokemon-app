@@ -8,26 +8,35 @@ import { Link } from 'react-router-dom';
 
 const RandomPokemon = () => {
 
-    const [id, setId] = useState(1);
-    const [name, setName] = useState('');
-    const [height, setHeight] = useState('');
-    const [weight, setWeight] = useState('');
-    const [image, setImage] = useState('');
+    const [id, setId] = useState(rnd(1, 898));
+    const [oldId, setOldId] = useState(id);
+    const [info, setInfo] = useState();
     const {data: pokemon, isLoading, isError} = useGetPokemonQuery(id);
 
     const changeId = () => {
-            setId(rnd(1, 800));
+        setId(rnd(1, 898));
+        setOldId(id);
     };
 
+    const render = (pokemon) => {
+        return (
+            <>
+                <img src={pokemon.sprites.front_default} alt="" class="pokeImage"/>
+                <div className="info">
+                    <h4>Name: {pokemon.name}</h4>
+                    <h4>Height: {pokemon.height} </h4>
+                    <h4>Weight: {pokemon.weight} </h4>
+                    <Link to={`/poke/${oldId}`} >More</Link>
+                </div>
+            </>
+        )   
+    }
     useEffect(() => {
         if (!isLoading) {
-            setName(pokemon.name);
-            setHeight(pokemon.height);
-            setImage(pokemon.sprites.front_default);
-            setWeight(pokemon.weight);
+                setInfo(render(pokemon))  
         }
-    }, [isLoading])
-    
+    }, [id, isLoading])
+
     function rnd (min, max) {
         return Math.floor(Math.random() * (max - min) + min)
     }
@@ -38,15 +47,7 @@ const RandomPokemon = () => {
             <h2>Randomizer 🎲</h2>
             <div className="random-pokemon"></div>
             <div className="door"></div>
-            <img src={image} alt="" class="pokeImage"/>
-            {isLoading ? <Spinner/> : null}
-            <div className="info">
-                <h4>Name: {name}</h4>
-                <h4>Height: {height} </h4>
-                <h4>Weight: {weight} </h4>
-                <Link to={`/poke/${id}`} >More</Link>
-            </div>
-            
+            {isLoading ? <Spinner/> : info}
             <ButtonGo 
                     text={'Random'}  
                     link={'javascript:void(0)'} 
