@@ -33,7 +33,9 @@ const RandomPokemon = () => {
     }
     useEffect(() => {
         if (!isLoading) {
-                setInfo(render(pokemon))  
+            setInfo(render(pokemon))  
+        } else {
+            setInfo(<Spinner/>)
         }
     }, [id, isLoading])
 
@@ -47,7 +49,7 @@ const RandomPokemon = () => {
             <h2>Randomizer 🎲</h2>
             <div className="random-pokemon"></div>
             <div className="door"></div>
-            {isLoading ? <Spinner/> : info}
+            {info}
             <ButtonGo 
                     text={'Random'}  
                     link={'javascript:void(0)'} 
