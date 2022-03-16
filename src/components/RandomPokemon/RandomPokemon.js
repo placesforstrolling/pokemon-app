@@ -9,16 +9,15 @@ import { Link } from 'react-router-dom';
 const RandomPokemon = () => {
 
     const [id, setId] = useState(rnd(1, 898));
-    const [oldId, setOldId] = useState(id);
     const [info, setInfo] = useState();
     const {data: pokemon, isLoading, isError} = useGetPokemonQuery(id);
 
     const changeId = () => {
         setId(rnd(1, 898));
-        setOldId(id);
     };
 
     const render = (pokemon) => {
+        console.log(pokemon)
         return (
             <>
                 <img src={pokemon.sprites.front_default} alt="" class="pokeImage"/>
@@ -26,7 +25,7 @@ const RandomPokemon = () => {
                     <h4>Name: {pokemon.name}</h4>
                     <h4>Height: {pokemon.height} </h4>
                     <h4>Weight: {pokemon.weight} </h4>
-                    <Link to={`/poke/${oldId}`} >More</Link>
+                    <Link to={`/poke/${id}`} >More</Link>
                 </div>
             </>
         )   
@@ -37,7 +36,7 @@ const RandomPokemon = () => {
         } else {
             setInfo(<Spinner/>)
         }
-    }, [id, isLoading])
+    }, [id, isLoading, pokemon])
 
     function rnd (min, max) {
         return Math.floor(Math.random() * (max - min) + min)
