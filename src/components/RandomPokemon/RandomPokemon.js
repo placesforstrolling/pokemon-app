@@ -15,12 +15,12 @@ const RandomPokemon = () => {
     const changeId = () => {
         setId(rnd(1, 898));
     };
-
+console.log(isLoading)
     const render = (pokemon) => {
         console.log(pokemon)
         return (
             <>
-                <img src={pokemon.sprites.front_default} alt="" class="pokeImage"/>
+                <img src={pokemon.sprites.front_default} alt="" className="pokeImage"/>
                 <div className="info">
                     <h4>Name: {pokemon.name}</h4>
                     <h4>Height: {pokemon.height} </h4>
@@ -36,7 +36,7 @@ const RandomPokemon = () => {
         } else {
             setInfo(<Spinner/>)
         }
-    }, [id, isLoading, pokemon])
+    }, [isLoading, pokemon])
 
     function rnd (min, max) {
         return Math.floor(Math.random() * (max - min) + min)

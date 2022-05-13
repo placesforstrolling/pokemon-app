@@ -5,83 +5,83 @@ import {Link} from 'react-router-dom';
 const Page404 = () => {
     return (
         <div>
-            <div class="container1">
-        <ul class="moon">
-          <li class="crater"></li>
-          <li class="crater"></li>
-          <li class="crater"></li>
+            <div className="container1">
+        <ul className="moon">
+          <li className="crater"></li>
+          <li className="crater"></li>
+          <li className="crater"></li>
         </ul>
-        <ul class="mountain-range">
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
-          <li class="mountain"></li>
+        <ul className="mountain-range">
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
+          <li className="mountain"></li>
         </ul>
-      <ul class="forest">
-        <li class="hill"></li>
-        <li class="hill"></li>
-        <li class="hill"></li>
+      <ul className="forest">
+        <li className="hill"></li>
+        <li className="hill"></li>
+        <li className="hill"></li>
       </ul>
-      <ul class="sparkles">
-          <li class="sparkle one"></li>
-          <li class="sparkle one"></li>
-          <li class="sparkle one"></li>
-          <li class="sparkle one"></li>
-          <li class="sparkle two"></li>
-          <li class="sparkle two"></li>
-          <li class="sparkle two"></li>
-          <li class="sparkle two"></li>
-          <li class="sparkle three"></li>
-          <li class="sparkle three"></li>
-          <li class="sparkle three"></li>
-          <li class="sparkle three"></li>
-          <li class="sparkle four"></li>
-          <li class="sparkle four"></li>
-          <li class="sparkle four"></li>
-          <li class="sparkle four"></li>
-          <li class="sparkle five"></li>
-          <li class="sparkle five"></li>
-          <li class="sparkle five"></li>
-          <li class="sparkle five"></li>
-          <li class="sparkle six"></li>
-          <li class="sparkle six"></li>
-          <li class="sparkle six"></li>
-          <li class="sparkle six"></li>
-          <li class="sparkle seven"></li>
-          <li class="sparkle seven"></li>
-          <li class="sparkle seven"></li>
-          <li class="sparkle seven"></li>
-          <li class="sparkle eight"></li>
-          <li class="sparkle eight"></li>
-          <li class="sparkle eight"></li>
-          <li class="sparkle eight"></li>
+      <ul className="sparkles">
+          <li className="sparkle one"></li>
+          <li className="sparkle one"></li>
+          <li className="sparkle one"></li>
+          <li className="sparkle one"></li>
+          <li className="sparkle two"></li>
+          <li className="sparkle two"></li>
+          <li className="sparkle two"></li>
+          <li className="sparkle two"></li>
+          <li className="sparkle three"></li>
+          <li className="sparkle three"></li>
+          <li className="sparkle three"></li>
+          <li className="sparkle three"></li>
+          <li className="sparkle four"></li>
+          <li className="sparkle four"></li>
+          <li className="sparkle four"></li>
+          <li className="sparkle four"></li>
+          <li className="sparkle five"></li>
+          <li className="sparkle five"></li>
+          <li className="sparkle five"></li>
+          <li className="sparkle five"></li>
+          <li className="sparkle six"></li>
+          <li className="sparkle six"></li>
+          <li className="sparkle six"></li>
+          <li className="sparkle six"></li>
+          <li className="sparkle seven"></li>
+          <li className="sparkle seven"></li>
+          <li className="sparkle seven"></li>
+          <li className="sparkle seven"></li>
+          <li className="sparkle eight"></li>
+          <li className="sparkle eight"></li>
+          <li className="sparkle eight"></li>
+          <li className="sparkle eight"></li>
         </ul>
-      <div class="grass">
-        <div class="pokemon">
-          <div class="poke" id="bulbasaur">
-            <div class="ear"></div>
-            <div class="ear"></div>
-            <div class="head"></div>
-            <div class="leg"></div>
-            <div class="bulba-body"></div>
-            <div class="bulbs">
-              <div class="bulb"></div>
+      <div className="grass">
+        <div className="pokemon">
+          <div className="poke" id="bulbasaur">
+            <div className="ear"></div>
+            <div className="ear"></div>
+            <div className="head"></div>
+            <div className="leg"></div>
+            <div className="bulba-body"></div>
+            <div className="bulbs">
+              <div className="bulb"></div>
             </div>
           </div>
-          <div class="poke" id="pikachu">
-            <div class="ear"></div>
-            <div class="ear"></div>
-            <div class="hand"></div>
-            <div class="pika-body"></div>
-            <div class="head"></div>
-            <div class="pika-tail"></div>
+          <div className="poke" id="pikachu">
+            <div className="ear"></div>
+            <div className="ear"></div>
+            <div className="hand"></div>
+            <div className="pika-body"></div>
+            <div className="head"></div>
+            <div className="pika-tail"></div>
           </div>
         </div>
       </div>

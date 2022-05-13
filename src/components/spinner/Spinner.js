@@ -3,11 +3,11 @@ import './spinner.css'
 const Spinner = () => {
 
     return (
-        <div class="ball tran">
-            <div class="up"></div>
-            <div class="down"></div>
-            <div class="rect"></div>
-            <div class="middle"></div>
+        <div className="ball tran">
+            <div className="up"></div>
+            <div className="down"></div>
+            <div className="rect"></div>
+            <div className="middle"></div>
         </div>
     );
 }

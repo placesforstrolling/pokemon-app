@@ -42,7 +42,7 @@ const PokemonList = () => {
                <div className="row justify-content-around">
                    
                    {elements}
-                   {<ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={false}/>}
+                   <ButtonGo text={'More'} link={'javascript:void(0)'} action={loadMore} disable={false}/>
                </div>
                
            </div>
