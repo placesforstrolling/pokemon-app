@@ -3,7 +3,7 @@ import './randomPokemon.scss';
 import { useGetPokemonQuery } from '../../api/apiSlice';
 import { useState, useEffect } from 'react';
 import ButtonGo from '../buttonGo/ButtonGo';
-import Spinner from '../Spinner/Spinner';
+// import Spinner from '../Spinner/Spinner';
 import { Link } from 'react-router-dom';
 
 const RandomPokemon = () => {
@@ -34,7 +34,7 @@ console.log(isLoading)
         if (!isLoading) {
             setInfo(render(pokemon))  
         } else {
-            setInfo(<Spinner/>)
+            // setInfo(<Spinner/>)
         }
     }, [isLoading, pokemon])
 
