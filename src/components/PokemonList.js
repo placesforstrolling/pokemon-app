@@ -3,7 +3,6 @@ import heart from '../../resources/img/heart.png'
 
 import SinglePokemon from './SinglePokemon';
 import ButtonGo from '../buttonGo/ButtonGo';
-import Spinner from '../Spinner/Spinner'
 import { useMemo, useState } from 'react';
 
 const PokemonList = () => {
