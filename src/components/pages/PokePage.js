@@ -2,7 +2,7 @@ import './pokePage.scss';
 
 import { useParams } from "react-router";
 import { useGetPokemonQuery } from '../../api/apiSlice';
-import Spinner from "../Spinner/Spinner";
+// import Spinner from "../Spinner/Spinner";
 import { Link } from 'react-router-dom';
 
 {/* <i className="fa-solid fa-hand-back-fist"></i> */}
@@ -107,7 +107,7 @@ const PokePage = () => {
             )
 
         } else if (isLoading) {
-            return <Spinner/>
+            // return <Spinner/>
         } else {
             console.log('Error');
         }
